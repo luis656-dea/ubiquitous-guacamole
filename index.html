@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Apps - Tip Tracker & ProLaunch</title>
+  <meta name="description" content="Official App Store landing page for Tip Tracker and ProLaunch iPhone apps." />
+  <meta property="og:title" content="Tip Tracker & ProLaunch" />
+  <meta property="og:description" content="Two iPhone apps built for tracking tip income and launching your career with AI." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ════════════════ NAV (updates per page) ════════════════ -->
+<nav id="mainNav">
+  <div class="nav-logo" id="navLogo" onclick="showPage('hub')">
+    <div class="nav-logo-icon icon-hub">
+      <span style="background:#FFD60A;border-radius:5px">⭐</span>
+      <span style="background:linear-gradient(135deg,#4A8FFF,#7B5FFF);border-radius:5px">🚀</span>
+    </div>
+    Our Apps
+  </div>
+  <ul id="navLinks">
+    <!-- injected by JS -->
+  </ul>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="toggle-icon">🌙</span>
+      <span class="toggle-icon">☀️</span>
+      <div class="toggle-knob"></div>
+    </button>
+    <button class="nav-dl" id="navDl" onclick="showPage('hub')" style="display:none">All Apps</button>
+  </div>
+</nav>
+
+<!-- ════════════════ HUB PAGE ════════════════ -->
+<div class="page active" id="page-hub">
+  <div class="hub-hero">
+    <span class="hub-eyebrow">iOS Apps</span>
+    <h1>Two apps.<br />Built for real life.</h1>
+    <p>Simple, powerful tools designed to help you earn more and advance your career - on the App Store.</p>
+  </div>
+
+  <div class="apps-wrap">
+    <div class="apps-grid">
+      <!-- TIP TRACKER CARD -->
+      <div class="app-card card-tip reveal" onclick="showPage('tip')">
+        <div class="card-head">
+          <div class="app-icon-lg icon-tip">⭐</div>
+          <div class="app-meta">
+          <div class="app-name">Tip Tracker</div>
+            <div class="app-tagline">Log shifts, visualize earnings, and calculate tips on the fly.</div>
+            <div class="app-badge badge-tip">Free · App Store</div>
+          </div>
+        </div>
+        <div class="card-shots">
+          <div class="card-shot"><img src="assets/tip-tracker/tip-log.png" alt="Tip Tracker tip log screenshot" loading="lazy" /></div>
+          <div class="card-shot"><img src="assets/tip-tracker/trends-chart.png" alt="Tip Tracker trends chart screenshot" loading="lazy" /></div>
+          <div class="card-shot"><img src="assets/tip-tracker/tip-calculator.png" alt="Tip Tracker calculator screenshot" loading="lazy" /></div>
+        </div>
+        <div class="card-pills">
+          <span class="pill">Tip Log</span><span class="pill">Earnings Chart</span>
+          <span class="pill">Calculator</span><span class="pill">Currency Converter</span>
+          <span class="pill">Tax Assistant</span><span class="pill">Dark Mode</span>
+        </div>
+        <div class="card-foot">
+          <span class="card-foot-label">For servers &amp; bartenders</span>
+          <a class="view-btn vbtn-tip" href="https://apps.apple.com/us/app/tip-tracker/id6755640399" target="_blank" rel="noopener" onclick="event.stopPropagation()">App Store</a>
+        </div>
+      </div>
+
+      <!-- PROLAUNCH CARD -->
+      <div class="app-card card-pro reveal d1" onclick="showPage('pro')">
+        <div class="card-head">
+          <div class="app-icon-lg icon-pro">🚀</div>
+          <div class="app-meta">
+            <div class="app-name">ProLaunch</div>
+            <div class="app-tagline">AI-powered resume builder, cover letters &amp; interview prep.</div>
+            <div class="app-badge badge-pro">Free · App Store</div>
+          </div>
+        </div>
+        <div class="card-shots">
+          <div class="card-shot"><img src="assets/prolaunch/resume-builder.png" alt="ProLaunch resume builder screenshot" loading="lazy" /></div>
+          <div class="card-shot"><img src="assets/prolaunch/cover-letter.png" alt="ProLaunch cover letter screenshot" loading="lazy" /></div>
+          <div class="card-shot"><img src="assets/prolaunch/interview-prep.png" alt="ProLaunch interview preparation screenshot" loading="lazy" /></div>
+        </div>
+        <div class="card-pills">
+          <span class="pill">AI Resume Builder</span><span class="pill">Cover Letter</span>
+          <span class="pill">Interview Prep</span><span class="pill">AI Career Mentor</span>
+          <span class="pill">Mock Interviews</span><span class="pill">Dark Mode</span>
+        </div>
+        <div class="card-foot">
+          <span class="card-foot-label">For job seekers</span>
+          <a class="view-btn vbtn-pro" href="https://apps.apple.com/us/app/prolaunch/id6748700523" target="_blank" rel="noopener" onclick="event.stopPropagation()">App Store</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hub-foot">
+    <p>All apps built for iPhone · Available on the App Store · Payments handled securely by Apple</p>
+  </div>
+
+  <footer>
+    <div class="ft-brand">Our Apps</div>
+    <div class="ft-links">
+      <button onclick="showPage('tip')">⭐ Tip Tracker</button>
+      <button onclick="showPage('pro')">🚀 ProLaunch</button>
+    </div>
+    <div class="ft-copy">© 2026. All rights reserved.</div>
+  </footer>
+</div>
+
+<!-- ════════════════ TIP TRACKER PAGE ════════════════ -->
+<div class="page page-tip" id="page-tip">
+
+  <section class="app-hero tip-glow">
+    <div class="hero-badge">★ Available on the App Store</div>
+    <h1>Track every tip.<br /><span class="accent-txt">Grow every shift.</span></h1>
+    <p class="sub">The cleanest way to log tips, visualize your earnings, and stay on top of your income.</p>
+    <div class="hero-actions">
+      <a href="https://apps.apple.com/us/app/tip-tracker/id6755640399" target="_blank" rel="noopener" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        Download Free
+      </a>
+      <button class="btn-outline" onclick="document.getElementById('tip-features').scrollIntoView({behavior:'smooth'})">See features ↓</button>
+    </div>
+    <div class="hero-stats">
+      <div class="h-stat"><span class="h-stat-num">$1K+</span><span class="h-stat-lbl">Tracked / month</span></div>
+      <div class="h-stat"><span class="h-stat-num">5 ★</span><span class="h-stat-lbl">App Store</span></div>
+      <div class="h-stat"><span class="h-stat-num">3-in-1</span><span class="h-stat-lbl">Tools built in</span></div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <section class="section" id="tip-features">
+    <div class="sec-header">
+      <span class="sec-tag">App Preview</span>
+      <h2 class="sec-h2 reveal">Beautifully simple.<br />Seriously powerful.</h2>
+      <p class="sec-desc reveal d1">Five screens. Every tool you need as a tip earner.</p>
+    </div>
+    <div class="ss-scroll"><div class="ss-track">
+      <div class="ss-card reveal"><img src="assets/tip-tracker/tip-log.png" alt="Tip Tracker tip log screenshot" loading="lazy"/><div class="ss-lbl">Tip Log</div></div>
+      <div class="ss-card featured reveal d1"><img src="assets/tip-tracker/trends-chart.png" alt="Tip Tracker trends chart screenshot" loading="lazy"/><div class="ss-lbl">Trends Chart</div></div>
+      <div class="ss-card reveal d2"><img src="assets/tip-tracker/tip-calculator.png" alt="Tip Tracker calculator screenshot" loading="lazy"/><div class="ss-lbl">Calculator</div></div>
+      <div class="ss-card reveal d3"><img src="assets/tip-tracker/settings-tax.png" alt="Tip Tracker settings and tax tracking screenshot" loading="lazy"/><div class="ss-lbl">Settings</div></div>
+      <div class="ss-card reveal"><img src="assets/tip-tracker/converter-promo.png" alt="Tip Tracker currency converter screenshot" loading="lazy"/><div class="ss-lbl">Converter</div></div>
+      <div class="ss-card reveal d1"><img src="assets/tip-tracker/converter.png" alt="Tip Tracker converter tab screenshot" loading="lazy"/><div class="ss-lbl">Converter Tab</div></div>
+    </div></div>
+  </section>
+
+  <div class="rule"></div>
+
+  <section class="section">
+    <div class="sec-header">
+      <span class="sec-tag">Features</span>
+      <h2 class="sec-h2 reveal">Six tools, one app.</h2>
+      <p class="sec-desc reveal d1">Built for servers, bartenders, and everyone who works for tips.</p>
+    </div>
+    <div class="bento">
+      <div class="bento-card bento-wide reveal"><div class="bento-icon">📋</div><h3>Tip Log</h3><p>Record every shift with amount, date, restaurant, a personal note, and a star rating. Your complete history in one scrollable list.</p></div>
+      <div class="bento-card reveal d1"><div class="bento-icon">📊</div><h3>Daily Earnings Chart</h3><p>Bar or line charts show your tips over time. Spot your best days and overall momentum.</p></div>
+      <div class="bento-card reveal"><div class="bento-icon">🧮</div><h3>Tip Calculator</h3><p>Enter a bill, slide to your percentage, and instantly see the exact amount. No mental math.</p></div>
+      <div class="bento-card reveal d1"><div class="bento-icon">💱</div><h3>Currency Converter</h3><p>Live rates between USD, CAD, and MXN — powered by Open Exchange Rates.</p></div>
+      <div class="bento-card reveal"><div class="bento-icon">🏛️</div><h3>Tax Assistant</h3><p>Set your tax percentage once. The app tracks what you owe so filing season has no surprises.</p></div>
+      <div class="bento-card reveal d1"><div class="bento-icon">🌙</div><h3>Dark Mode & Liquid Glass</h3><p>Light, Dark, or System — plus optional iOS 18 Liquid Glass styling.</p></div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <section class="section alt-bg" id="tip-calc">
+    <div class="calc-wrap">
+      <div class="calc-copy reveal">
+        <span class="sec-tag" style="text-align:left">Built-in Tool</span>
+        <h2>Calculate before<br />you leave the table.</h2>
+        <p>The live tip calculator is always one tap away. No guessing, no mental math — just results.</p>
+        <ul class="perk-list">
+          <li><span class="perk-dot"></span>Drag a slider for any percentage</li>
+          <li><span class="perk-dot"></span>See bill, tip, and total instantly</li>
+          <li><span class="perk-dot"></span>Works completely offline</li>
+          <li><span class="perk-dot"></span>Save directly to your tip log</li>
+        </ul>
+      </div>
+      <div class="calc-box reveal d1">
+        <div class="calc-ttl">Tip Calculator</div>
+        <div class="field-lbl">Bill Amount</div>
+        <div class="bill-wrap"><input type="number" id="billInput" placeholder="0.00" min="0" step="0.01"/></div>
+        <div class="field-lbl">Tip Percentage</div>
+        <div class="slider-row">
+          <span class="pct-badge" id="pctBadge">18%</span>
+          <input type="range" id="tipRange" min="0" max="40" value="18"/>
+        </div>
+        <div class="sum-card">
+          <div class="sum-row"><span>Bill</span><span id="billOut">$0.00</span></div>
+          <div class="sum-row"><span>Tip</span><span id="tipOut">$0.00</span></div>
+          <div class="sum-row sum-total"><span>Total</span><span id="totalOut">$0.00</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <section class="section" id="tip-pricing">
+    <div class="sec-header">
+      <span class="sec-tag">Pricing</span>
+      <h2 class="sec-h2 reveal">Free to start.<br />Upgrade when ready.</h2>
+      <p class="sec-desc reveal d1">Core features are free forever. Premium unlocks charts, tax tools, and more.</p>
+    </div>
+    <div class="pricing-cards">
+      <div class="plan-card reveal"><div class="plan-name">Free</div><div class="plan-price">$0</div><div class="plan-per">Forever free</div><div class="plan-trial">&nbsp;</div><div class="plan-div"></div><ul class="plan-perks"><li><span class="ck">✓</span>Tip log &amp; history</li><li><span class="ck">✓</span>Tip calculator</li><li><span class="ck">✓</span>Currency converter</li></ul></div>
+      <div class="plan-card reveal d1"><div class="plan-name">Weekly</div><div class="plan-price"><sup>$</sup>1.99</div><div class="plan-per">per week</div><div class="plan-trial">1-week free trial</div><div class="plan-div"></div><ul class="plan-perks"><li><span class="ck">✓</span>Everything in Free</li><li><span class="ck">✓</span>Earnings charts</li><li><span class="ck">✓</span>Tax assistant</li><li><span class="ck">✓</span>Dark mode &amp; Liquid Glass</li></ul></div>
+      <div class="plan-card hl reveal d2"><div class="plan-badge badge-blue">Best Value</div><div class="plan-name">Monthly</div><div class="plan-price"><sup>$</sup>5.99</div><div class="plan-per">per month</div><div class="plan-trial">&nbsp;</div><div class="plan-div"></div><ul class="plan-perks"><li><span class="ck">✓</span>Everything in Free</li><li><span class="ck">✓</span>Earnings charts</li><li><span class="ck">✓</span>Tax assistant</li><li><span class="ck">✓</span>Dark mode &amp; Liquid Glass</li><li><span class="ck">✓</span>All future features</li></ul></div>
+    </div>
+    <p style="text-align:center;font-size:.73rem;color:var(--text3);margin-top:18px;font-weight:300">Managed through Apple. Cancel anytime in iPhone Settings.</p>
+  </section>
+
+  <div class="rule"></div>
+
+  <section class="section alt-bg" id="tip-privacy">
+    <div class="sec-header">
+      <span class="sec-tag">Privacy Policy</span>
+      <h2 class="sec-h2 reveal">Your data stays<br />on your phone.</h2>
+      <p class="sec-desc reveal d1">No servers. No tracking. No exceptions.</p>
+    </div>
+    <div class="priv-box reveal">
+      <p>We care about your privacy. Our app does not collect your information. It does not store your information. It does not send your information to anyone. Your privacy is important to us.</p>
+      <p>When you put information into the app it is saved on your iPhone. The information is never shared with the company or any other people. We do not look at what you do in the app, or track where you go.</p>
+      <p>The app does not use computers somewhere else to store your information. When you buy something or make a payment inside the app, it is done using Apple Pay and the purchase system that Apple has. The people who made this app do not get to see the details of your payment.</p>
+      <p>You need to ask Apple for a refund. This has to be done the way Apple says it should be done, so you have to follow Apple's rules for getting a refund. By using this app, you agree to this privacy policy.</p>
+    </div>
+  </section>
+
+  <div class="dl-wrap">
+    <div class="dl-card reveal">
+      <h2>Start tracking<br />your tips today.</h2>
+      <p>Free to download. No account needed. Just open and go.</p>
+      <a href="https://apps.apple.com/us/app/tip-tracker/id6755640399" target="_blank" rel="noopener" class="as-btn">
+        <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <div class="as-txt"><small>Download on the</small><strong>App Store</strong></div>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="ft-brand">Tip Tracker</div>
+    <div class="ft-links">
+      <button onclick="showPage('hub')">← All Apps</button>
+      <button onclick="document.getElementById('tip-features').scrollIntoView({behavior:'smooth'})">Features</button>
+      <button onclick="document.getElementById('tip-pricing').scrollIntoView({behavior:'smooth'})">Pricing</button>
+      <button onclick="document.getElementById('tip-privacy').scrollIntoView({behavior:'smooth'})">Privacy</button>
+    </div>
+    <div class="ft-copy">© 2026 Tip Tracker. All rights reserved.</div>
+  </footer>
+</div>
+
+<!-- ════════════════ PROLAUNCH PAGE ════════════════ -->
+<div class="page page-pro" id="page-pro">
+
+  <section class="app-hero pro-glow">
+    <div class="hero-badge">🚀 AI-Powered Career Tools</div>
+    <h1>Launch your career<br /><span class="pro-accent">with confidence.</span></h1>
+    <p class="sub">Build polished resumes, write tailored cover letters, ace mock interviews — all powered by AI, all in one app.</p>
+    <div class="hero-actions">
+      <a href="https://apps.apple.com/us/app/prolaunch/id6748700523" target="_blank" rel="noopener" class="btn-primary btn-pro-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        Download Free
+      </a>
+      <button class="btn-outline" onclick="document.getElementById('pro-features').scrollIntoView({behavior:'smooth'})">See features ↓</button>
+    </div>
+    <div class="hero-stats">
+      <div class="h-stat"><span class="h-stat-num pro-stat-num">AI</span><span class="h-stat-lbl">Powered</span></div>
+      <div class="h-stat"><span class="h-stat-num pro-stat-num">4-in-1</span><span class="h-stat-lbl">Career tools</span></div>
+      <div class="h-stat"><span class="h-stat-num pro-stat-num">5 ★</span><span class="h-stat-lbl">App Store</span></div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <section class="section" id="pro-features">
+    <div class="sec-header">
+      <span class="sec-tag">App Preview</span>
+      <h2 class="sec-h2 reveal">Everything you need<br />to land the job.</h2>
+      <p class="sec-desc reveal d1">From resume to offer — ProLaunch has every step covered.</p>
+    </div>
+    <div class="ss-scroll"><div class="ss-track">
+      <div class="ss-card featured reveal"><img src="assets/prolaunch/resume-builder.png" alt="ProLaunch resume builder screenshot" loading="lazy"/><div class="ss-lbl">Resume Builder</div></div>
+      <div class="ss-card reveal d1"><img src="assets/prolaunch/cover-letter.png" alt="ProLaunch cover letter screenshot" loading="lazy"/><div class="ss-lbl">Cover Letter</div></div>
+      <div class="ss-card reveal d2"><img src="assets/prolaunch/interview-prep.png" alt="ProLaunch interview preparation screenshot" loading="lazy"/><div class="ss-lbl">Interview Prep</div></div>
+      <div class="ss-card reveal d3"><img src="assets/prolaunch/career-mentor.png" alt="ProLaunch AI career mentor screenshot" loading="lazy"/><div class="ss-lbl">AI Mentor</div></div>
+      <div class="ss-card reveal"><img src="assets/prolaunch/dark-mode.png" alt="ProLaunch dark mode screenshot" loading="lazy"/><div class="ss-lbl">Dark Mode</div></div>
+    </div></div>
+  </section>
+
+  <div class="rule"></div>
+
+  <section class="section">
+    <div class="sec-header">
+      <span class="sec-tag">Features</span>
+      <h2 class="sec-h2 reveal">Four AI tools,<br />one career app.</h2>
+      <p class="sec-desc reveal d1">Every tool you need from application to interview.</p>
+    </div>
+    <div class="bento">
+      <div class="bento-card bento-wide reveal"><div class="bento-icon">📄</div><h3>AI Resume Builder</h3><p>Fill in your details and let AI generate a polished, professional resume. Choose from Default, Advance, and Expert templates — Premium unlocks more layouts.</p></div>
+      <div class="bento-card reveal d1"><div class="bento-icon">✉️</div><h3>Cover Letter Creator</h3><p>Enter the job title, company, and description — AI writes a tailored cover letter in seconds.</p></div>
+      <div class="bento-card reveal"><div class="bento-icon">🎤</div><h3>Interview Preparation</h3><p>Practice AI-powered mock interviews across General, Technology, Sales, Marketing, and Management.</p></div>
+      <div class="bento-card reveal d1"><div class="bento-icon">🤖</div><h3>AI Career Mentor</h3><p>Chat with your personal AI career companion for real-time advice and professional development support.</p></div>
+      <div class="bento-card reveal"><div class="bento-icon">🌙</div><h3>Dark Mode</h3><p>Full dark mode support. Automatically adapts to your system preference or set it manually.</p></div>
+      <div class="bento-card reveal d1"><div class="bento-icon">📊</div><h3>Progress Tracking</h3><p>Track interview practice sessions, message history, and career growth milestones all in one place.</p></div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <section class="section alt-bg" id="pro-how">
+    <div class="sec-header">
+      <span class="sec-tag">How It Works</span>
+      <h2 class="sec-h2 reveal">Three steps to<br />your next job.</h2>
+      <p class="sec-desc reveal d1">ProLaunch makes the job application process simple and stress-free.</p>
+    </div>
+    <div class="steps-wrap">
+      <div class="step-card reveal"><div class="step-num">1</div><h3>Build Your Profile</h3><p>Enter your experience, skills, and career goals. ProLaunch uses this to personalise every document it creates for you.</p></div>
+      <div class="step-card reveal d1"><div class="step-num">2</div><h3>Generate with AI</h3><p>Tap Generate and let AI do the heavy lifting. Get a polished resume and cover letter tailored to the specific job in seconds.</p></div>
+      <div class="step-card reveal d2"><div class="step-num">3</div><h3>Practice & Apply</h3><p>Run through mock interviews by category, refine your answers with AI feedback, then apply with confidence.</p></div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <section class="section" id="pro-pricing">
+    <div class="sec-header">
+      <span class="sec-tag">Pricing</span>
+      <h2 class="sec-h2 reveal">Free to start.<br />Premium when you're ready.</h2>
+      <p class="sec-desc reveal d1">Core AI features are included free. Unlock premium templates and unlimited access with a plan.</p>
+    </div>
+    <div class="pricing-cards">
+      <div class="plan-card reveal"><div class="plan-name">Free</div><div class="plan-price">$0</div><div class="plan-per">Forever free</div><div class="plan-trial">&nbsp;</div><div class="plan-div"></div><ul class="plan-perks"><li><span class="ck">✓</span>AI Resume Builder (Default)</li><li><span class="ck">✓</span>Cover Letter Creator</li><li><span class="ck">✓</span>Interview practice (limited)</li><li><span class="ck">✓</span>10 AI mentor messages</li></ul></div>
+      <div class="plan-card reveal d1"><div class="plan-name">Weekly</div><div class="plan-price"><sup>$</sup>1.99</div><div class="plan-per">per week</div><div class="plan-trial">Free trial available</div><div class="plan-div"></div><ul class="plan-perks"><li><span class="ck">✓</span>Everything in Free</li><li><span class="ck">✓</span>Premium resume templates</li><li><span class="ck">✓</span>Unlimited interview practice</li><li><span class="ck">✓</span>Unlimited AI mentor messages</li></ul></div>
+      <div class="plan-card hl reveal d2"><div class="plan-badge badge-grad">Best Value</div><div class="plan-name">Monthly</div><div class="plan-price"><sup>$</sup>5.99</div><div class="plan-per">per month</div><div class="plan-trial">&nbsp;</div><div class="plan-div"></div><ul class="plan-perks"><li><span class="ck">✓</span>Everything in Free</li><li><span class="ck">✓</span>Premium resume templates</li><li><span class="ck">✓</span>Unlimited interview practice</li><li><span class="ck">✓</span>Unlimited AI mentor messages</li><li><span class="ck">✓</span>All future features</li></ul></div>
+    </div>
+    <p style="text-align:center;font-size:.73rem;color:var(--text3);margin-top:18px;font-weight:300">Managed through Apple. Cancel anytime in iPhone Settings.</p>
+  </section>
+
+  <div class="rule"></div>
+
+  <section class="section alt-bg" id="pro-privacy">
+    <div class="sec-header">
+      <span class="sec-tag">Privacy Policy</span>
+      <h2 class="sec-h2 reveal">Your data,<br />your device.</h2>
+      <p class="sec-desc reveal d1">Everything stays local. We don't collect or sell your information.</p>
+    </div>
+    <div class="priv-box reveal">
+      <div class="priv-h">Information We Collect</div>
+      <p><strong>Profile Information:</strong> Career goals, experience level, industry preferences, and professional background you voluntarily provide during profile setup.</p>
+      <p><strong>Chat Conversations:</strong> Messages and conversations with our AI career companion.</p>
+      <p><strong>Usage Data:</strong> How you interact with the app, features used, and time spent in the app.</p>
+      <p><strong>Purchase Data:</strong> Information related to in-app purchases and subscription status.</p>
+      <p><strong>Payment Information:</strong> Processed securely through Apple's App Store — we do not store payment details.</p>
+      <p><strong>Device Data:</strong> Device type, operating system version, and unique device identifiers.</p>
+      <p><strong>App Usage:</strong> Crash reports, performance data, and feature usage analytics.</p>
+      <div class="priv-h">How We Use Your Information</div>
+      <ul class="priv-list">
+        <li>Provide and improve our AI career companion services</li>
+        <li>Process subscription payments and manage your premium account</li>
+        <li>Personalise your experience and provide relevant career advice</li>
+        <li>Analyse app usage to improve functionality and user experience</li>
+        <li>Send important updates about the app and your subscription</li>
+        <li>Ensure app security and prevent fraud</li>
+      </ul>
+      <div class="priv-h">Data Storage</div>
+      <p><strong>UserDefaults:</strong> Message count, subscription status, and timer data stored locally via iOS UserDefaults.</p>
+      <p><strong>Conversation Memory:</strong> Chat history and summaries stored locally on your device.</p>
+      <p><strong>Profile Data:</strong> Your career profile is stored locally on your device.</p>
+      <p>All data is encrypted in transit and at rest. Your data is not transmitted to our servers without your explicit consent.</p>
+      <div class="priv-h">Subscriptions & Payments</div>
+      <ul class="priv-list">
+        <li>Premium subscriptions offered through Apple's In-App Purchase system</li>
+        <li>Prices and terms clearly displayed before purchase</li>
+        <li>All payments processed securely through Apple</li>
+        <li>Subscriptions auto-renew unless cancelled at least 24 hours before the end of the current period</li>
+        <li>Manage your subscription through your Apple ID account settings</li>
+      </ul>
+      <div class="priv-h">Your Rights</div>
+      <ul class="priv-list">
+        <li>View and modify your profile information at any time</li>
+        <li>Delete your conversation history through the app settings</li>
+        <li>Cancel your subscription through your Apple ID account settings</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="disclaimer" id="pro-disclaimer">
+    <p><strong>Disclaimer:</strong> This app is for informational and educational purposes only. All AI-generated content is provided as-is and should not be considered professional advice. Use at your own discretion.</p>
+  </div>
+
+  <div class="dl-wrap">
+    <div class="dl-card reveal">
+      <h2>Ready to launch<br />your career?</h2>
+      <p>Free to download. AI-powered from day one. No account required.</p>
+      <a href="https://apps.apple.com/us/app/prolaunch/id6748700523" target="_blank" rel="noopener" class="as-btn">
+        <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <div class="as-txt"><small>Download on the</small><strong>App Store</strong></div>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="ft-brand">ProLaunch</div>
+    <div class="ft-links">
+      <button onclick="showPage('hub')">← All Apps</button>
+      <button onclick="document.getElementById('pro-features').scrollIntoView({behavior:'smooth'})">Features</button>
+      <button onclick="document.getElementById('pro-pricing').scrollIntoView({behavior:'smooth'})">Pricing</button>
+      <button onclick="document.getElementById('pro-privacy').scrollIntoView({behavior:'smooth'})">Privacy</button>
+      <button onclick="document.getElementById('pro-disclaimer').scrollIntoView({behavior:'smooth'})">Disclaimer</button>
+    </div>
+    <div class="ft-copy">© 2026 ProLaunch. All rights reserved.</div>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
